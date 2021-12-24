@@ -1,0 +1,24 @@
+<div class="container" *ngIf="covidInfo">
+  
+  <h1>{{ nazivDrzave }}</h1>
+  <h4>Covid info zaključno sa {{ danasnjiDatum | date:'dd.MM.yyyy.'}} godine</h4>
+
+  <p>Ukupno zaraženih: {{ ukupanBrojZarazenih | number }}</p>
+  <p>Ukupno smrtnih slučajeva: {{ ukupanBrojSmrtnihSlucajeva | number }}</p>
+  <p>Ukupno oporavljenih: {{ maxOporavljenih.recovered | number }}</p>
+
+  <p>Najveći broj zaraženih po danu: {{ maxDnevniBrojZarazenih.confirmed_daily | number}} -
+    {{ maxDnevniBrojZarazenih.date | date:'dd.MM.yyyy.' }} </p>
+  <p>Najveći broj umrlih po danu: {{ maxDnevniBrojUmrlih.deaths_daily | number}} -
+    {{ maxDnevniBrojUmrlih.date | date:'dd.MM.yyyy.' }}</p>
+
+  <p>Procenat umrlih na br.stanovnika: {{ procenatUmrlihNaBrojStanovnika | number}}%</p>
+  <p>Procenat umrlih na br.zaraženih: {{ procenatUmrlihNaBrojZarazenih | number }}%</p>
+  <p>Prosječan broj zaraženih po danu: {{ prosjecanBrojZarazenih | number }}</p>
+
+  <div class="grafikoni">
+    <canvas baseChart [datasets]="grafikonPodaci" [labels]="grafikonLabels" [chartType]="'line'"></canvas>
+    <canvas baseChart [datasets]="grafikonPodaciUmrli" [labels]="grafikonLabels" [chartType]="'line'"></canvas>
+  </div>
+
+</div>

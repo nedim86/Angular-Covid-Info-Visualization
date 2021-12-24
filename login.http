@@ -1,0 +1,7 @@
+POST https://www.angular-kurs.online/api/accounts/login
+Content-Type: application/json
+
+{
+  "email":"sergiobeg@gmail.com",
+  "password":"Angular-21"
+}

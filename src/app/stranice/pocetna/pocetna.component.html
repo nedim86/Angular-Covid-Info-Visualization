@@ -1,0 +1,12 @@
+<div class="forma">
+  <mat-form-field appearance="fill">
+    <input matInput type="text" placeholder="Unesite termin za pretragu" [(ngModel)]="terminPretrage">
+  </mat-form-field>
+  <button mat-button color="primary" (click)="pretrazi()">Pretraži</button>
+</div>
+
+<div class="omotac">
+  <div *ngFor="let drzava of listaDrzava">
+    <app-drzava-card [drzava]="drzava"></app-drzava-card>
+  </div>
+</div>

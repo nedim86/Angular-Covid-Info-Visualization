@@ -1,0 +1,19 @@
+.indikatorUcitavanja {
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+}
+
+.linija {
+  background-color: #FFAB91;
+  width: 33%;
+  height: 100%;
+  margin-top: 0;
+  margin-left: -25%;
+  animation: ucitavanje 3s infinite ease-in-out;
+}
+
+@keyframes ucitavanje {
+  0% { margin-left: -25%; }
+  50% { margin-left: 100%; }
+}

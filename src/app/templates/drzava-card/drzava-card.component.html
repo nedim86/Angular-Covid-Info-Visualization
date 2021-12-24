@@ -1,0 +1,15 @@
+  <mat-card  class="kartica">
+    <mat-card-header>
+      <img class="zastava" mat-card-avatar src="{{ drzava.coatOfArms.png }}" alt="">
+      <mat-card-title>{{ drzava.name.common }}</mat-card-title>
+      <mat-card-subtitle>{{ drzava.region }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p *ngIf="drzava.capital">Gl.grad: {{ drzava.capital[0] | uppercase }}</p>
+      <p>Br.stanovnika: {{ drzava.population | number  }}</p>
+      <p>Površina: {{ drzava.area | number }} km2</p>
+      <button mat-raised-button color="primary" [routerLink]="['covid-info', drzava.name.common]"> Covid-19 info </button>
+    </mat-card-content>
+
+  </mat-card>
